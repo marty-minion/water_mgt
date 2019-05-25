@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class PostsController extends Controller
 {
@@ -34,7 +36,65 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //The function will be called 
+        // when data is post
+
+
+
+        // Log::info('Sensor  data.',  ['data' => $request] );
+    
+
+       
+
+  //fetch values wanted from request header
+  $censor_id = $request->input('censor_id');
+  $longitude = $request->input('longitude');
+  $latitude = $request->input('latitude');
+  $water_pressure_timestamp = $request->input('water_pressure_timestamp');
+  $water_pressure = $request->input('water_pressure');
+
+        //check from sensores table if sencor exists
+        $sensors_exist = DB::select('select * from sensorsTable where sensor_id ='.$censor_id );
+
+        if(empty($sensors_exist)){
+
+          
+            //insert a row into sensorsrs table
+            DB::insert('insert into sensorsTable (sensor_id,longitude,latitude ) values(?, ?,?)',[$censor_id, $longitude ,$latitude]);
+
+            echo "Record inserted successfully into sensorsTable";
+
+
+            //create a table for that sensor
+            //query to create table
+            $tableQuery = '
+            CREATE TABLE `'.$censor_id.'` (
+                `id`	INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT UNIQUE,
+                `'.$water_pressure_timestamp.'`	INTEGER NOT NULL,
+                `'.$water_pressure.'`	INTEGER NOT NULL
+            );
+            ';
+
+            DB::raw($tableQuery);
+            echo "table created";
+
+
+            //insert into the table
+            DB::insert('insert into `'.$censor_id.'` (water_pressure_timestamp,water_pressure ) values(?, ?)',[ $water_pressure_timestamp ,$water_pressure]);
+            echo "Record inserted successfully into ".$censor_id;
+      
+        }else{
+            //insert into the table
+           
+            DB::insert('insert into `'.$censor_id.'` (water_pressure_timestamp,water_pressure ) values(?, ?)',[ $water_pressure_timestamp ,$water_pressure]);
+            echo "Record inserted successfully into ".$censor_id;
+        }
+      
+       
+
+      
+    
+    
     }
 
     /**
