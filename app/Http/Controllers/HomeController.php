@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -23,6 +25,15 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // return view('home');
+        $sensorData = DB::select('SELECT * FROM `sensorsTable`');
+        $pipeData = DB::select('SELECT * FROM `pipeTable`');
+     
+        //Log::info("table value", $sensorData);
+
+        return view('home')
+        ->with("sensorData",$sensorData)
+        ->with("pipeData",$pipeData);
     }
+    
 }

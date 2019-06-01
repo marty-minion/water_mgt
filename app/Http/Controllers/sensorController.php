@@ -2,42 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use DB;
 use Illuminate\Http\Request;
+use DB;
 use Illuminate\Support\Facades\Log;
-// use Illuminate\Database\Schema;
 use Illuminate\Support\Facades\Schema;
 
-class PostsController extends Controller
+
+class sensorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-      
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
+    //post data 
+    // dore in db
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeSensorData(Request $request)
     {
         //The function will be called 
         // when data is post
@@ -48,16 +29,29 @@ class PostsController extends Controller
         $latitude = $request->input('latitude');
         $water_pressure_timestamp = $request->input('water_pressure_timestamp');
         $water_pressure = $request->input('water_pressure');
+        $pipe_id = $request->input('pipe_id');
 
         //check from sensores table if sencor exists
-       // $sensors_exist = DB::select('select * from sensorsTable where sensor_id ='.$censor_id );
+       // 
+       
+       $sensors_exist = DB::select('select * from sensorsTable where sensor_id ='.$censor_id );
 
 
-        if (!Schema::hasTable($censor_id)) {
+     
+       
+       
+       
+       if (!Schema::hasTable($censor_id)) {
             // Code to create table
         
             //insert a row into sensorsrs table
-            DB::insert('insert into sensorsTable (sensor_id,longitude,latitude,created_at, updated_at ) values(?,?,?,?,?)',[$censor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
+           // DB::insert('insert into sensorsTable (sensor_id,longitude,latitude,created_at, updated_at,pipe_id ) values(?,?,?,?,?,?)',[$censor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
+
+           if(empty($sensors_exist)){
+            //insert
+            DB::insert('insert into sensorsTable (sensor_id,longitude,latitude,created_at, updated_at,pipe_id ) values(?,?,?,?,?,?)',[$censor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
+    
+         }
 
             echo "Record inserted successfully into sensorsTable";
 
@@ -79,60 +73,28 @@ class PostsController extends Controller
       
         }else{
             //insert into the table
-           
+           if(empty($sensors_exist)){
+            //insert
+            DB::insert('insert into sensorsTable (sensor_id,longitude,latitude,created_at, updated_at,pipe_id ) values(?,?,?,?,?,?)',[$censor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
+    
+         }
+            
             DB::insert('insert into `'.$censor_id.'` (water_pressure_timestamp,water_pressure ,created_at, updated_at ) values(?, ?, ? , ?)',[ $water_pressure_timestamp ,$water_pressure, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
             echo "Record inserted successfully into ".$censor_id;
         }
-      
-       
-
-      
-    
-    
+          
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
+   
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
+    public function getASpecificSensorsData(Request $request){
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
+        $sensorData = DB::select('SELECT * FROM `'.$request->sensor_id.'`');
+     
+        Log::info("table value", $sensorData);
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('sensorDataPage')
+        ->with("sensorData",$sensorData);
+
     }
 }
