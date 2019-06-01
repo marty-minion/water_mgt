@@ -9,7 +9,33 @@
                 <div class="card-header">Pipe Data</div>
 
                 <div class="card-body">
-                 
+                <table class="table">
+                    <thead>
+
+
+
+                    @foreach($sensorsid as $sensorsid)
+                        
+                    <th scope="col">Sensor {{$sensorsid}} </th>                 
+                     @endforeach
+
+                    </thead>
+
+                    <tbody>
+
+                  
+                  
+                     
+    
+                    </tbody>
+                </table>
+
+
+
+
+
+                      
+        
 
                 </div>
             </div>

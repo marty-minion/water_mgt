@@ -81,8 +81,14 @@ foreach($sensor_ids as $anId){
         Log::info("An array of sensor id with array of the sensors data ", $allSensorData);
 
 
-        return view('pipeDataPage')
-        ->with("sensorsid",$sensorsid)
-        ->with("allSensorData",$allSensorData);
+
+
+
+
+        print_r($allSensorData[0][0]->water_pressure_timestamp);
+
+        // return view('pipeDataPage')
+        // ->with("sensorsid",$myArrayOfSensorIds)
+        // ->with("allSensorData",$allSensorData);
     }
 }
