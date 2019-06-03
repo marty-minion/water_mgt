@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class SensorTable extends Migration
+class PipeId extends Migration
 {
     /**
      * Run the migrations.
@@ -14,16 +14,12 @@ class SensorTable extends Migration
     public function up()
     {
         //
-        Schema::create('sensorsTable', function (Blueprint $table) {
+        Schema::create('pipeTable', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('sensor_id')->unique();
-            $table->integer('pipe_id');
-            $table->integer('longitude');
-            $table->integer('latitude');
+            $table->integer('pipe_id')->unique();
+            $table->string('pipe_sensors_id');
             $table->timestamps();
         });
-
-        
     }
 
     /**
@@ -34,6 +30,6 @@ class SensorTable extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('sensorsTable');
+        Schema::dropIfExists('pipeTable');
     }
 }

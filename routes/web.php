@@ -24,6 +24,14 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+//pipes urls
+Route::post('/pipe/register', 'pipeController@registerNewPipe')->name('pipe_register');
+Route::get('/pipe/get_data/{pipe_id}', 'pipeController@getSensorsForThisPipe')->name('get_sensors_for_a_pipe');
+
+//sensors urls
+Route::post('/sensors/data', 'sensorController@storeSensorData')->name('getAllSensorsData');
+Route::get('/sensors/data/{sensor_id}', 'sensorController@getASpecificSensorsData')->name('getASpecificSensorsData');
+
 
 //the '/' means home ie the home page
 Route::get('/','index@index');
