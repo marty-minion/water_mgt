@@ -24,7 +24,7 @@ class sensorController extends Controller
         // when data is post
 
         //fetch values wanted from request header
-        $censor_id = $request->input('censor_id');
+        $sensor_id = $request->input('censor_id');
         $longitude = $request->input('longitude');
         $latitude = $request->input('latitude');
         $water_pressure_timestamp = $request->input('water_pressure_timestamp');
@@ -34,14 +34,14 @@ class sensorController extends Controller
         //check from sensores table if sencor exists
        // 
        
-       $sensors_exist = DB::select('select * from sensorsTable where sensor_id ='.$censor_id );
+       $sensors_exist = DB::select('select * from sensorsTable where sensor_id ='. $sensor_id );
 
 
      
        
        
        
-       if (!Schema::hasTable($censor_id)) {
+       if (!Schema::hasTable($sensor_id)) {
             // Code to create table
         
             //insert a row into sensorsrs table
@@ -49,14 +49,14 @@ class sensorController extends Controller
 
            if(empty($sensors_exist)){
             //insert
-            DB::insert('insert into sensorsTable (sensor_id,longitude,latitude,created_at, updated_at,pipe_id ) values(?,?,?,?,?,?)',[$censor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
+            DB::insert('insert into sensorsTable (sensor_id,longitude,latitude,created_at, updated_at,pipe_id ) values(?,?,?,?,?,?)',[$sensor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
     
          }
 
             echo "Record inserted successfully into sensorsTable";
 
 
-            Schema::connection('mysql')->create($censor_id, function($table)
+            Schema::connection('mysql')->create($sensor_id, function($table)
             {
                 $table->increments('id')->index();;
                 $table->string('water_pressure_timestamp');
@@ -68,19 +68,19 @@ class sensorController extends Controller
 
 
             //insert into the table
-            DB::insert('insert into `'.$censor_id.'` (water_pressure_timestamp,water_pressure ,created_at, updated_at  ) values(?, ?, ? ,?)',[ $water_pressure_timestamp ,$water_pressure, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
-            echo "Record inserted successfully into ".$censor_id;
+            DB::insert('insert into `'.$sensor_id.'` (water_pressure_timestamp,water_pressure ,created_at, updated_at  ) values(?, ?, ? ,?)',[ $water_pressure_timestamp ,$water_pressure, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
+            echo "Record inserted successfully into ".$sensor_id;
       
         }else{
             //insert into the table
            if(empty($sensors_exist)){
             //insert
-            DB::insert('insert into sensorsTable (sensor_id,longitude,latitude,created_at, updated_at,pipe_id ) values(?,?,?,?,?,?)',[$censor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
+            DB::insert('insert into sensorsTable (sensor_id,longitude,latitude,created_at, updated_at,pipe_id ) values(?,?,?,?,?,?)',[$sensor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
     
          }
             
-            DB::insert('insert into `'.$censor_id.'` (water_pressure_timestamp,water_pressure ,created_at, updated_at ) values(?, ?, ? , ?)',[ $water_pressure_timestamp ,$water_pressure, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
-            echo "Record inserted successfully into ".$censor_id;
+            DB::insert('insert into `'.$sensor_id.'` (water_pressure_timestamp,water_pressure ,created_at, updated_at ) values(?, ?, ? , ?)',[ $water_pressure_timestamp ,$water_pressure, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
+            echo "Record inserted successfully into ".$sensor_id;
         }
           
     }

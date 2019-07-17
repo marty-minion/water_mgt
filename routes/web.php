@@ -15,7 +15,7 @@
 	
 Route::view('contact','contactus');
 Route::view('services','services');
-Route::resource('posts','PostsController');
+#Route::resource('posts','PostsController');
 
 
 
