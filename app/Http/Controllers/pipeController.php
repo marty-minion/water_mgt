@@ -82,13 +82,14 @@ foreach($sensor_ids as $anId){
 
 
 
+        // print_r($allSensorData[0][0]->water_pressure_timestamp);
+        // print_r($allSensorData[0][0]->water_pressure);
 
+        // <td> {{$}} </td>
 
-
-        print_r($allSensorData[0][0]->water_pressure_timestamp);
-
-        // return view('pipeDataPage')
-        // ->with("sensorsid",$myArrayOfSensorIds)
-        // ->with("allSensorData",$allSensorData);
+        return view('pipeDataPage')
+        ->with("sensorsid",$myArrayOfSensorIds)
+        ->with("sensorsList",$myArrayOfSensorIds)
+        ->with("allSensorData",$allSensorData);
     }
 }
