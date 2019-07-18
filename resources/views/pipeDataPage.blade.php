@@ -17,29 +17,25 @@
                         <h1>Pipes Data Instances</h1>
 
                         <table class="table">
-                
-                    <tbody>
 
-                   
+                        <tbody>
 
                     @foreach($arrayOfOneSensorData[0] as $arrayOfOneSensorData)
                         @php  $data =  $loop->iteration  @endphp
                        
                        
-                      <td>
-                      <tr> 
+                      <tr>
+                      <td> 
                         <a href= "{{ route('get_measure_instance_data', [ 'pipe_id' => $pipe_id , 'measure_instance' => $data-1   ])}}">
                         Instance {{$data}}
                         </a>    
-                        </tr>
-                      </td>
-                       
+                        </td>
+                      </tr>
                        
                         @endforeach
            
-
-                    </tbody>
-                </table>
+                        <tbody>
+</table>
                 </div>
             </div>
         </div>

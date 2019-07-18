@@ -108,16 +108,16 @@
                            
                                 <a class="btn btn-border-filled" href="{{ route('login') }}">{{ __('Login') }}</a>
                      
-                           
+                                <a href="#contact" class="btn btn-border page-scroll">Contact Us</a>
                         @else
-                                <a  class="btn btn-border-filled nav-link dropdown-toggle" href="{{ route('home') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a  class="btn btn-border-filled nav-link " href="{{ route('home') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Dashboard <span class="caret"></span>
                                 </a>
 
                               
                         @endguest
 
-                <a href="#contact" class="btn btn-border page-scroll">Contact Us</a>
+                
               </div>
             </div>
           </div>
@@ -216,9 +216,9 @@
           <div class="col-lg-12">
             <div class="features-text section-header text-center">  
               <div>   
-                <h2 class="section-title">Services We Provide</h2>
+                <h2 class="section-title">Features of our service</h2>
                 <div class="desc-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <br> eiusmod tempor incididunt ut labore et dolore.</p>
+                  <p> these and much much more.</p>
                 </div>
               </div> 
             </div>
@@ -237,8 +237,8 @@
                </div>
                <div class="feature-info float-left">
                  <h4>Easy to Customize</h4>
-                 <p>Producing long lasting organic SEO results for <br> brand of different kinds for more than a decade,<br> we understand that’s your.</p>
-               </div>
+                <p>simple and friendly</p>
+                </div>
             </div>
             <!-- End Fetatures -->
           </div>
@@ -252,8 +252,10 @@
                  <i class="lni-briefcase"></i>
                </div>
                <div class="feature-info float-left">
-                 <h4>Business Template</h4>
-                 <p>Producing long lasting organic SEO results for <br> brand of different kinds for more than a decade,<br> we understand that’s your.</p>
+                 <h4>Device dynamic</h4>
+                 <p>
+                   get reports and statistics easily
+                 </p>
                </div>
             </div>
             <!-- End Fetatures -->
@@ -269,7 +271,7 @@
                </div>
                <div class="feature-info float-left">
                  <h4>Clean & Trendy Design</h4>
-                 <p>Producing long lasting organic SEO results for <br> brand of different kinds for more than a decade,<br> we understand that’s your.</p>
+                 <p>easy to use design</p>
                </div>
             </div>
             <!-- End Fetatures -->
@@ -284,8 +286,10 @@
                 <i class="lni-layers"></i>
                </div>
                <div class="feature-info float-left">
-                 <h4>Tons of Sections</h4>
-                 <p>Producing long lasting organic SEO results for <br> brand of different kinds for more than a decade,<br> we understand that’s your.</p>
+                 <h4>Easily Scalable</h4>
+                 <p>
+                Built for medium and large scale enterprises   
+                </p>
                </div>
             </div>
             <!-- End Fetatures -->
@@ -300,8 +304,8 @@
                  <i class="lni-reload"></i>
                </div>
                <div class="feature-info float-left">
-                 <h4>Free Future Updates</h4>
-                 <p>Producing long lasting organic SEO results for <br> brand of different kinds for more than a decade,<br> we understand that’s your.</p>
+                 <h4>Rapid  Updates</h4>
+                 <p>Rapid feature release cycle</p>
                </div>
             </div>
             <!-- End Fetatures -->
@@ -317,7 +321,7 @@
                </div>
                <div class="feature-info float-left">
                  <h4>Premier Support</h4>
-                 <p>Producing long lasting organic SEO results for <br> brand of different kinds for more than a decade,<br> we understand that’s your.</p>
+                 <p> 24/7 online Support.</p>
                </div>
             </div>
             <!-- End Fetatures -->
@@ -332,843 +336,6 @@
     <!-- Cool Fetatures Section End --> 
 
 
-    <!-- Recent Showcase Section Start -->
-    <section id="showcase">
-      <div class="container-fluid right-position">
-        <!-- Start Row -->
-        <div class="row gradient-bg">
-          <div class="col-lg-12">
-            <div class="showcase-text section-header text-center">  
-              <div>   
-                <h2 class="section-title">Recent Works</h2>
-                <div class="desc-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>  
-                  <p>eiusmod tempor incididunt ut labore et dolore.</p>
-                </div>
-              </div> 
-            </div>
-          </div>
-
-        </div>
-        <!-- End Row -->
-        <!-- Start Row -->
-        <div class="row justify-content-center showcase-area">
-          <div class="col-lg-12 col-md-12 col-xs-12 pr-0">
-            <div class="showcase-slider owl-carousel">
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/01.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/01.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/02.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/02.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/03.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/03.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/04.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/04.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/05.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/05.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/01.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/01.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/02.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/02.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/03.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/03.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/04.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/04.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/05.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/05.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/01.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/01.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/02.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/01.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/03.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/01.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/04.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/05.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/05.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/01.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/01.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/01.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/02.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/01.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/03.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/01.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/04.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/01.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="screenshot-thumb">
-                  <img src="{{URL::asset('images/index/showcase/05.jpg')}}" class="img-fluid" alt="" />
-                  <div class="hover-content text-center">
-                    <div class="fancy-table">
-                      <div class="table-cell">
-                        <div class="single-text">
-                          <p>Icon , Web</p>
-                          <h5>Redesign Slack</h5>
-                        </div>
-                        <div class="zoom-icon">
-                          <a class="lightbox" href="{{URL::asset('images/index/showcase/01.jpg')}}"><i class="lni-zoom-in"></i></a>
-                          <a href="#"><i class="lni-link"></i></a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-             
-
-              
-            </div>
-          </div>
-        </div>
-        <!-- End Row -->
-      </div>
-    </section>
-    <!-- Recent Showcase Section End --> 
-
-    <!-- Our Pricing Plan Section Start -->
-    <section id="pricing" class="section">
-      <div class="container">
-        <!-- Start Row -->
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="pricing-text section-header text-center">  
-              <div>   
-                <h2 class="section-title">Pricing Plans</h2>
-                <div class="desc-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>  
-                  <p>eiusmod tempor incididunt ut labore et dolore.</p>
-                </div>
-              </div> 
-            </div>
-          </div>
-
-        </div>
-        <!-- End Row -->
-        <!-- Start Row -->
-        <div class="row pricing-tables">
-         <!--  Start Col -->
-          <div class="col-lg-4 col-md-4 col-xs-12">
-            <div class="pricing-table text-center">
-              <div class="pricing-details">
-                <h3>Free</h3>
-                <h1><span>$</span>00</h1>
-                <ul>
-                  <li>Free Instalation</li>
-                  <li>500MB Storage</li>
-                  <li>Single User</li>
-                  <li>5 GB Bandwith</li>
-                  <li>Minimal Features</li>
-                  <li>No Dashboard</li>
-                </ul>
-              </div>
-              <div class="plan-button">
-                <a href="#" class="btn btn-border">Purchase</a>
-              </div>
-            </div>
-          </div>
-           <!--  End Col -->
-         <!--  Start Col -->
-          <div class="col-lg-4 col-md-4 col-xs-12">
-            <div class="pricing-table text-center">
-              <div class="pricing-details">
-                <h3>standard</h3>
-                <h1><span>$</span>19.99</h1>
-                <ul>
-                  <li>Free Instalation</li>
-                  <li>2 GB Storage</li>
-                  <li>Upto 2 users</li>
-                  <li>50 GB Bandwith</li>
-                  <li>All Features</li>
-                  <li>Sales Dashboard</li>                  
-                </ul>
-              </div>
-              <div class="plan-button">
-                <a href="#" class="btn btn-common">Purchase</a>
-              </div>
-            </div>
-          </div>
-           <!--  End Col -->
-         <!--  Start Col -->
-          <div class="col-lg-4 col-md-4 col-xs-12">
-            <div class="pricing-table text-center">
-              <div class="pricing-details">
-                <h3>Business</h3>
-                <h1><span>$</span>29.99</h1>
-                <ul>
-                  <li>Free Instalation</li>
-                  <li>5 GB Storage</li>
-                  <li>Upto 4 users</li>
-                  <li>100 GB Bandwith</li>
-                  <li>All Features</li>
-                  <li>Sales Dashboard</li>
-                </ul>
-              </div>
-              <div class="plan-button">
-                <a href="#" class="btn btn-border">Purchase</a>
-              </div>
-            </div>
-          </div>
-           <!--  End Col -->
-
-        </div>
-        <!-- End Row -->
-      </div>
-    </section>
-    <!-- Our Pricing Plan Section End --> 
-
-    <!-- Client Testimoninals Section Start -->
-    <section id="testimonial" class="section">
-      <div class="container right-position">
-        <!-- Start Row -->
-        <div class="row">
-          <div class="col-md-12 col-sm-12">
-            <div class="video-promo-content text-center">
-
-              <a id="play-video" class="video-play-button video-popup" href="https://www.youtube.com/watch?v=Y4fodpIwal8&list=RDXCElIIYx_8s&index=13">
-                <span></span>
-              </a>
-
-            </div>
-          </div>
-        </div>
-        <!-- End Row -->
-        <!-- Start Row -->
-        <div class="row justify-content-center testimonial-area">
-          <div class="col-lg-10 col-md-12 col-sm-12 col-xs-12 pr-20 pl-20" style="overflow: hidden;padding-bottom: 60px">
-            <div id="client-testimonial" class="text-center owl-carousel">
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="content-inner">
-                    <p class="description">Appropriately implement one-to-one catalysts for change <br> vis-a-vis wireless catalysts for change. Enthusiastically architect <br> adaptive e-tailers after sustainable total linkage. Appropriately <br> implement one-to-one catalysts for change.</p>
-                    <div class="author-info">
-                      <h5>Tahmina Anny ; <span> UIdeck Customer</span></h5>
-                    </div>
-                  </div>
-                  <div class="client-thumb">
-                    <img src="{{URL::asset('images/index/testimonial/01.png')}}" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="content-inner">
-                    <p class="description">Appropriately implement one-to-one catalysts for change <br> vis-a-vis wireless catalysts for change. Enthusiastically architect <br> adaptive e-tailers after sustainable total linkage. Appropriately <br> implement one-to-one catalysts for change.</p>
-                    <div class="author-info">
-                      <h5>Tahmina Anny ; <span> UIdeck Customer</span></h5>
-                    </div>
-                  </div>
-                  <div class="client-thumb">
-                    <img src="{{URL::asset('images/index/testimonial/01.png')}}" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="content-inner">
-                    <p class="description">Appropriately implement one-to-one catalysts for change <br> vis-a-vis wireless catalysts for change. Enthusiastically architect <br> adaptive e-tailers after sustainable total linkage. Appropriately <br> implement one-to-one catalysts for change.</p>
-                    <div class="author-info">
-                      <h5>Tahmina Anny ; <span> UIdeck Customer</span></h5>
-                    </div>
-                  </div>
-                  <div class="client-thumb">
-                    <img src="{{URL::asset('images/index/testimonial/01.png')}}" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="content-inner">
-                    <p class="description">Appropriately implement one-to-one catalysts for change <br> vis-a-vis wireless catalysts for change. Enthusiastically architect <br> adaptive e-tailers after sustainable total linkage. Appropriately <br> implement one-to-one catalysts for change.</p>
-                    <div class="author-info">
-                      <h5>Tahmina Anny ; <span> UIdeck Customer</span></h5>
-                    </div>
-                  </div>
-                  <div class="client-thumb">
-                    <img src="{{URL::asset('images/index/testimonial/01.png')}}" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="content-inner">
-                    <p class="description">Appropriately implement one-to-one catalysts for change <br> vis-a-vis wireless catalysts for change. Enthusiastically architect <br> adaptive e-tailers after sustainable total linkage. Appropriately <br> implement one-to-one catalysts for change.</p>
-                    <div class="author-info">
-                      <h5>Tahmina Anny ; <span> UIdeck Customer</span></h5>
-                    </div>
-                  </div>
-                  <div class="client-thumb">
-                    <img src="{{URL::asset('images/index/testimonial/01.png')}}" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="item">
-                <div class="testimonial-item">
-                  <div class="content-inner">
-                    <p class="description">Appropriately implement one-to-one catalysts for change <br> vis-a-vis wireless catalysts for change. Enthusiastically architect <br> adaptive e-tailers after sustainable total linkage. Appropriately <br> implement one-to-one catalysts for change.</p>
-                    <div class="author-info">
-                      <h5>Tahmina Anny ; <span> UIdeck Customer</span></h5>
-                    </div>
-                  </div>
-                  <div class="client-thumb">
-                    <img src="{{URL::asset('images/index/testimonial/01.png')}}" alt="">
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <!-- End Row -->
-      </div>
-    </section>
-    <!-- Client Testimoninals Section End --> 
-
-
-    <!-- Team section Start -->
-    <section id="team" class="section">
-      <div class="container">
-        <!-- Start Row -->
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="team-text section-header text-center">  
-              <div>   
-                <h2 class="section-title">Team Members</h2>
-                <div class="desc-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>  
-                  <p>eiusmod tempor incididunt ut labore et dolore.</p>
-                </div>
-              </div> 
-            </div>
-          </div>
-
-        </div>
-        <!-- End Row -->
-        <!-- Start Row -->
-        <div class="row">
-          <!-- Start Col -->
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-team">
-              <div class="team-thumb">
-                <img src="{{URL::asset('images/index/team/01.jpg')}}" class="img-fluid" alt="">
-              </div>
-
-              <div class="team-details">
-              <div class="team-social-icons">
-                  <ul class="social-list">
-                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                    <li><a href="#"><i class="lni-google-plus"></i></a></li>
-                  </ul>
-                </div> 
-                <div class="team-inner text-center">
-                  <h5 class="team-title">Patric Green</h5>
-                  <p>Lead Designer</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Start Col -->
- 
-          <!-- Start Col -->
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-team">
-              <div class="team-thumb">
-                <img src="{{URL::asset('images/index/team/02.jpg')}}" class="img-fluid" alt="">
-              </div>
-
-              <div class="team-details">
-              <div class="team-social-icons">
-                  <ul class="social-list">
-                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                    <li><a href="#"><i class="lni-google-plus"></i></a></li>
-                  </ul>
-                </div>
-                <div class="team-inner text-center">
-                  <h5 class="team-title">Celina D Cruze</h5>
-                  <p>Front-end Developer</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Start Col -->
- 
-          <!-- Start Col -->
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-team">
-              <div class="team-thumb">
-                <img src="{{URL::asset('images/index/team/03.jpg')}}" class="img-fluid" alt="">
-              </div>
-
-              <div class="team-details">
-              <div class="team-social-icons">
-                  <ul class="social-list">
-                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                    <li><a href="#"><i class="lni-google-plus"></i></a></li>
-                  </ul>
-                </div>
-                <div class="team-inner text-center">
-                  <h5 class="team-title">Daryl Dixon</h5>
-                  <p>Content Writer</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Start Col -->
- 
-          <!-- Start Col -->
-          <div class="col-lg-3 col-md-6 col-xs-12">
-            <div class="single-team">
-              <div class="team-thumb">
-                <img src="{{URL::asset('images/index/team/04.jpg')}}" class="img-fluid" alt="">
-              </div>
-
-              <div class="team-details">
-                <div class="team-social-icons">
-                  <ul class="social-list">
-                    <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
-                    <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
-                    <li><a href="#"><i class="lni-google-plus"></i></a></li>
-                  </ul>
-                </div>
-                <div class="team-inner text-center">
-                  <h5 class="team-title">Mark Parker</h5>
-                  <p>Support Engineer</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Start Col -->
- 
-
-        </div>
-        <!-- End Row -->
-      </div>
-    </section>
-    <!-- Team section End -->
-
-
-    <!-- Blog Section -->
-    <section id="blog" class="section">
-      <!-- Container Starts -->
-      <div class="container">
-        <!-- Start Row -->
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="blog-text section-header text-center">  
-              <div>   
-                <h2 class="section-title">Latest Blog Posts</h2>
-                <div class="desc-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>  
-                  <p>eiusmod tempor incididunt ut labore et dolore.</p>
-                </div>
-              </div> 
-            </div>
-          </div>
-
-        </div>
-        <!-- End Row -->
-        <!-- Start Row -->
-        <div class="row">
-          <!-- Start Col -->
-          <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
-            <div class="blog-item-wrapper">
-              <div class="blog-item-img">
-                <a href="single-post.html">
-                  <img src="{{URL::asset('images/index/blog/01.jpg')}}" class="img-fluid" alt="">
-                </a>             
-              </div>
-              <div class="blog-item-text"> 
-                <h3><a href="single-post.html">How Slick Will Transform  <br>Your Business</a></h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                <a href="" class="read-more">5 Min read</a>
-              </div>
-              <div class="author">
-                <span class="name"><i class="lni-user"></i><a href="#">Posted by Admin</a></span>
-                <span class="date float-right"><i class="lni-calendar"></i><a href="#">10 April, 2020</a></span>
-              </div>
-            </div>
-            <!-- Blog Item Wrapper Ends-->
-          </div>
-          <!-- End Col -->
-          <!-- Start Col -->
-          <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
-            <div class="blog-item-wrapper">
-              <div class="blog-item-img">
-                <a href="single-post.html">
-                  <img src="{{URL::asset('images/index/blog/02.jpg')}}" class="img-fluid" alt="">
-                </a>             
-              </div>
-              <div class="blog-item-text"> 
-                <h3><a href="single-post.html">Growth Techniques for  <br>New Startups</a></h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                <a href="" class="read-more">5 Min read</a>
-              </div>
-              <div class="author">
-                <span class="name"><i class="lni-user"></i><a href="#">Posted by Admin</a></span>
-                <span class="date float-right"><i class="lni-calendar"></i><a href="#">10 April, 2020</a></span>
-              </div>
-            </div>
-            <!-- Blog Item Wrapper Ends-->
-          </div>
-          <!-- End Col -->
-          <!-- Start Col -->
-          <div class="col-lg-4 col-md-6 col-xs-12 blog-item">
-            <!-- Blog Item Starts -->
-            <div class="blog-item-wrapper">
-              <div class="blog-item-img">
-                <a href="single-post.html">
-                  <img src="{{URL::asset('images/index/blog/03.jpg')}}" class="img-fluid" alt="">
-                </a>             
-              </div>
-              <div class="blog-item-text"> 
-                <h3><a href="single-post.html">Writing Professional <br>Emails to Customers</a></h3>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry.</p>
-                <a href="" class="read-more">5 Min read</a>
-              </div>
-              <div class="author">
-                <span class="name"><i class="lni-user"></i><a href="#">Posted by Admin</a></span>
-                <span class="date float-right"><i class="lni-calendar"></i><a href="#">10 April, 2020</a></span>
-              </div>
-            </div>
-            <!-- Blog Item Wrapper Ends-->
-          </div>
-          <!-- End Col -->
-
-        </div>
-        <!-- End Row -->
-      </div>
-    </section>
-    <!-- blog Section End -->
-
     <!-- Contact Us Section -->
     <section id="contact" class="section">
       <!-- Container Starts -->
@@ -1180,8 +347,7 @@
               <div>   
                 <h2 class="section-title">Get In Touch</h2>
                 <div class="desc-text">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do</p>  
-                  <p>eiusmod tempor incididunt ut labore et dolore.</p>
+                  <p>Comment, Suggestion , feddback : all is welcome</p>
                 </div>
               </div> 
             </div>
