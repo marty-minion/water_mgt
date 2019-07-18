@@ -1,95 +1,48 @@
 @extends('layouts.app')
 
-
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Pipe Data</div>
+                <div class="card-header">Dashboard</div>
 
                 <div class="card-body">
-                <table class="table">
-                    <thead>
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
 
-               <tr>
-               <th>
-                   
-                </th> 
-               <th>
-                   No.
-                </th> 
-                <th>
-                water pressure timestamp
-                </th>
-                <th>
-                water pressure
-                </th>
-                <th>
-                created_at
-                </th>
-                <th>
-               difference Pressure
-                </th>
-                <th>
-               difference time
-                </th>
-               </tr> 
-                    </thead> 
+                        <h1>Pipes Data Instances</h1>
+
+                        <table class="table">
+                
                     <tbody>
 
                    
-                    @foreach($sensorsList as $sensorsList)
+
+                    @foreach($arrayOfOneSensorData[0] as $arrayOfOneSensorData)
                         @php  $data =  $loop->iteration  @endphp
-                       <tr>
-                        <td>Sensor</td>
-                       <td scope="col">  {{ $data }}  </td> 
-                       <td scope="col">  @php echo $allSensorData[ $data -1][0]->water_pressure_timestamp   @endphp  </td> 
-                       <td scope="col">  {{$allSensorData[ $data -1 ][0]->water_pressure }}  </td> 
-                       <td scope="col">  {{$allSensorData[ $data -1 ][0]->created_at }}  </td> 
                        
-
                        
-                        @if( $data-1  > 0)
-                        @php $diff =  $allSensorData[ $data -1 ][0]->water_pressure_timestamp - $allSensorData[ $data -2 ][0]->water_pressure_timestamp   @endphp
-                            <td> {{$diff}} </td>
-                         @else 
-                            <td>{{$data-1 > 1}}</td>
-                         @endif 
-                         @if( $data-1  > 0)
-                         @php 
-                            $date_one_string = $allSensorData[ $data -1 ][0]->created_at; 
-                            $date_two_string = $allSensorData[ $data -2 ][0]->created_at; 
-
-                          
-                            $date_one =  new DateTime($date_one_string);
-                            $date_two =  new DateTime($date_two_string);
-
-                            $interval = $date_one->diff($date_two);
-                            
-                            
-                          @endphp
-                            <td>@php echo ( $interval->format('D %i')." ".$interval->format('M %i')." ".$interval->format('S %s'));  @endphp    </td>
-                         @else 
-                            <td>{{$data-1 > 1}}</td>
-                         @endif 
+                      <td>
+                      <tr> 
+                        <a href= "{{ route('get_measure_instance_data', [ 'pipe_id' => $pipe_id , 'measure_instance' => $data-1   ])}}">
+                        Instance {{$data}}
+                        </a>    
+                        </tr>
+                      </td>
                        
-                       </tr>   
-                                      
-                    @endforeach
-                   
-
+                       
+                        @endforeach
            
 
                     </tbody>
                 </table>
-                   
-        
-
                 </div>
             </div>
         </div>
     </div>
 </div>
-
 @endsection

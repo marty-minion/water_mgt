@@ -52,11 +52,41 @@ foreach($sensor_ids as $anId){
     }
 
 
-    //
+    //list measure instance for the pip sensors
+    public function getMeasureInstanceList(Request $request){
+
+
+
+        $pipe_id = $request->pipe_id ;
+        
+        // return view('home');
+        $sensorsid = DB::select('SELECT pipe_sensors_id FROM `pipeTable` where pipe_id ='. $pipe_id);
+        
+        $myArrayOfSensorIds = explode(',', $sensorsid[0]->pipe_sensors_id);
+        $arrayOfOneSensorData= array();
+
+        foreach ( $myArrayOfSensorIds as $value){ 
+
+            $tableNameInt = (int)$value; 
+           
+           $specificSensorData = DB::select('SELECT * FROM `'.$tableNameInt.'`');
+            
+
+            array_push($arrayOfOneSensorData, $specificSensorData);
+            break;
+        } 
+
+
+        return view('pipeDataPage')
+        ->with("pipe_id",$pipe_id)
+        ->with("arrayOfOneSensorData",$arrayOfOneSensorData);
+    }
+
     public function getSensorsForThisPipe(Request $request)
     {
 
         $pipe_id = $request->pipe_id ;
+        $measure_instance = $request->measure_instance ;
         
         // return view('home');
         $sensorsid = DB::select('SELECT pipe_sensors_id FROM `pipeTable` where pipe_id ='. $pipe_id);
@@ -87,9 +117,10 @@ foreach($sensor_ids as $anId){
 
         // <td> {{$}} </td>
 
-        return view('pipeDataPage')
+        return view('pipeDatMeasureInstance')
         ->with("sensorsid",$myArrayOfSensorIds)
         ->with("sensorsList",$myArrayOfSensorIds)
+        ->with("measureInstance",$measure_instance)
         ->with("allSensorData",$allSensorData);
     }
 }

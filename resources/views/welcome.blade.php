@@ -110,7 +110,7 @@
                      
                            
                         @else
-                                <a id="navbarDropdown" class="btn btn-border-filled nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a  class="btn btn-border-filled nav-link dropdown-toggle" href="{{ route('home') }}" role="button"  aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
