@@ -31,7 +31,7 @@ class sensorController extends Controller
         $water_pressure = $request->input('water_pressure');
         $pipe_id = $request->input('pipe_id');
 
-        //check from sensores table if sencor exists
+        //check from sensores table if sensor exists
        // 
        
        $sensors_exist = DB::select('select * from sensorsTable where sensor_id ='. $sensor_id );

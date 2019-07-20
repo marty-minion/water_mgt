@@ -7,7 +7,7 @@
     <meta name="keywords" content="Bootstrap, Landing page, Template, Business, Service">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="author" content="Grayrids">
-    <title>Slick - Bootstrap 4 Template</title>
+    <title>Water Engineering Services</title>
     <!--====== Favicon Icon ======-->
     <link rel="shortcut icon" href="{{URL::asset('images/index/2.png')}}" type="image/png">
     <!-- Bootstrap CSS -->
@@ -49,7 +49,7 @@
                 <a class="nav-link page-scroll" href="#features">Services</a>
               </li>                            
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#showcase">Showcase</a>
+                <a class="nav-link page-scroll" href="home">Showcase</a>
               </li>       
               <li class="nav-item">
                 <a class="nav-link page-scroll" href="#pricing">Pricing</a>
@@ -103,62 +103,6 @@
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab <br>dolores ea fugiat nesciunt quisquam.</p>
               <div class="header-button">
                 
-<<<<<<< HEAD
-                padding: 100px 25px;
-                font-family: Montserrat, sans-serif;
-            }
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body class="b-image">
-    @extends('layout')
-      @section('content')
-      
-       <!-- <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif -->
-=======
 
                 @guest
                            
@@ -1049,7 +993,6 @@
             </div>
           </div>
           <!-- Start Col -->
->>>>>>> b4a2be4621b1aff70378481eea2938bf973c14c2
  
           <!-- Start Col -->
           <div class="col-lg-3 col-md-6 col-xs-12">

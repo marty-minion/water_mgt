@@ -26,7 +26,7 @@ class pipeController extends Controller
 foreach($sensor_ids as $anId){
     echo "checking table fo id".$anId;
     if (!Schema::hasTable($anId)) {
-        echo "creating  table fo id".$anId;
+        echo "creating  table for id".$anId;
 
 
        
