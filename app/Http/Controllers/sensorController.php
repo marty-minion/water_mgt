@@ -36,13 +36,7 @@ class sensorController extends Controller
        
        $sensors_exist = DB::select('select * from sensorsTable where sensor_id ='. $sensor_id );
 
-
-     
-       
-       
-       
        if (!Schema::hasTable($sensor_id)) {
-            // Code to create table
         
             //insert a row into sensorsrs table
            // DB::insert('insert into sensorsTable (sensor_id,longitude,latitude,created_at, updated_at,pipe_id ) values(?,?,?,?,?,?)',[$censor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
