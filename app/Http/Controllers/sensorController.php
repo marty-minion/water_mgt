@@ -36,15 +36,28 @@ class sensorController extends Controller
        
        $sensors_exist = DB::select('select * from sensorsTable where sensor_id ='. $sensor_id );
 
+<<<<<<< HEAD
        if (!Schema::hasTable($sensor_id)) {
+=======
+
+     
+       
+       if (!Schema::hasTable($censor_id)) {
+            // Code to create table
+>>>>>>> 6f05ff34e3b5a26725db5f53f047186ea29dfd5a
         
             //insert a row into sensorsrs table
            // DB::insert('insert into sensorsTable (sensor_id,longitude,latitude,created_at, updated_at,pipe_id ) values(?,?,?,?,?,?)',[$censor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
 
            if(empty($sensors_exist)){
             //insert
+<<<<<<< HEAD
             DB::insert('insert into sensorsTable (sensor_id,longitude,latitude,created_at, updated_at,pipe_id ) values(?,?,?,?,?,?)',[$sensor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
+=======
+            // DB::insert('insert into `sensorsTable` ( `sensor_id`,`longitude`,`latitude`,`created_at`, `updated_at`,`pipe_id` ) values(?,?,?,?,?,?)',[$censor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
+>>>>>>> 6f05ff34e3b5a26725db5f53f047186ea29dfd5a
     
+      DB::insert('insert into `sensorsTable` ( `sensor_id`,`longitude`,`latitude`,`created_at`, `updated_at`,`pipe_id` ) values('.$censor_id.', '.$longitude.' ,'.$latitude.', '.date("Y-m-d H:i:s").', '.date("Y-m-d H:i:s").', '.$pipe_id .'');
          }
 
             echo "Record inserted successfully into sensorsTable";
