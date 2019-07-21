@@ -54,7 +54,7 @@ foreach($sensor_ids as $anId){
         
         //get all sensors 
         $pipe_id = $request->input('pipe_id');
-        $new_sensor_id = $request->input('sensor_id');
+        $new_sensor_id = $request->input('pipe_sensors_id');
         
        
         $sensors = DB::select('select * from pipeTable where pipe_id = ?', [$pipe_id]);

@@ -7,16 +7,16 @@
             <div class="card">
                 <div class="card-header">Update pipe</div>
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('pipe_update') }}">
                         @csrf
 
                         <div class="form-group row">
-                            <label for="pipe_number" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                            <label for="pipe_id" class="col-md-4 col-form-label text-md-right">Pipe id</label>
 
                             <div class="col-md-6">
-                                <input id="pipe_number" type="number" class="form-control @error('pipe_number') is-invalid @enderror" name="pipe_number" value="{{ old('pipe_number') }}" required autocomplete="pipe_number" autofocus>
+                                <input id="pipe_id" type="number" class="form-control @error('pipe_id') is-invalid @enderror" name="pipe_id" value="{{ old('pipe_id') }}" required autocomplete="pipe_id" autofocus>
 
-                                @error('pipe_number')
+                                @error('pipe_id')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -25,10 +25,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="sensors_id" class="col-md-4 col-form-label text-md-right">{{ __('sensors_id') }}</label>
+                            <label for="sensors_id" class="col-md-4 col-form-label text-md-right">Sensor id</label>
 
                             <div class="col-md-6">
-                                <input id="sensors_id" type="text" class="form-control @error('sensors_id') is-invalid @enderror" name="sensors_id" required autocomplete="current-sensors_id">
+                                <input id="sensors_id" type="number" class="form-control @error('sensors_id') is-invalid @enderror" name="pipe_sensors_id" required autocomplete="current-sensors_id">
 
                                 @error('sensors_id')
                                     <span class="invalid-feedback" role="alert">
@@ -38,6 +38,13 @@
                             </div>
                         </div>
 
+                        <div class="form-group row mb-0">
+                            <div class="col-md-6 offset-md-4">
+                                <button type="submit" class="btn btn-primary">
+                 Submit
+                                </button>
+                            </div>
+                        </div>
 
         
                     </form>
