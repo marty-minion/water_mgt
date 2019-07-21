@@ -13,15 +13,18 @@
                         <div class="form-group row">
                             <label for="pipe_id" class="col-md-4 col-form-label text-md-right">Pipe id</label>
 
-                            <div class="col-md-6">
-                                <input id="pipe_id" type="number" class="form-control @error('pipe_id') is-invalid @enderror" name="pipe_id" value="{{ old('pipe_id') }}" required autocomplete="pipe_id" autofocus>
+                            <div class="dropdown show">
+  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    select pipe
+  </a>
 
-                                @error('pipe_id')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+  @foreach($pipeId as $pipeId)
+    <a class="dropdown-item" href="#">{{$pipeId}}</a>
+    @endforeach
+  </div>
+
+</div>
                         </div>
 
                         <div class="form-group row">
@@ -46,7 +49,7 @@
                             </div>
                         </div>
 
-        
+
                     </form>
                 </div>
             </div>
