@@ -1,9 +1,13 @@
 
 
-@extends('layouts.app')
+@extends('layout')
 
 
 @section('content')
+
+<br><br><br><br><br>
+
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -24,7 +28,7 @@
                 <th>
                 water pressure timestamp
                 </th>
-                <th>
+exist                <th>
                 water pressure
                 </th>
                 
@@ -51,7 +55,9 @@
 
                        
                         @if( $data-1  > $measureInstance)
-                            @php $diff =  $allSensorData[ $data -1 ][$measureInstance]->water_pressure - $allSensorData[ $data -2 ][$measureInstance]->water_pressure   @endphp
+                            @php $diff =  $allSensorData[ $data -1 ][$measureInstance]->water_pressure - $allSensorData[ $data -2 ]
+                            [$measureInstance]->water_pressure  
+                             @endphp
                             <td> {{$diff}} </td>
                          @else 
                             <td>{{$data-1 > 1}}</td>

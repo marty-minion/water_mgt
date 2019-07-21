@@ -38,8 +38,8 @@ class sensorController extends Controller
 
 
      
-       
-       if (!Schema::hasTable($censor_id)) {
+       //note change of c to s
+       if (!Schema::hasTable($sensor_id)) {
             // Code to create table
         
             //insert a row into sensorsrs table
@@ -49,7 +49,7 @@ class sensorController extends Controller
             //insert
             // DB::insert('insert into `sensorsTable` ( `sensor_id`,`longitude`,`latitude`,`created_at`, `updated_at`,`pipe_id` ) values(?,?,?,?,?,?)',[$censor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
     
-      DB::insert('insert into `sensorsTable` ( `sensor_id`,`longitude`,`latitude`,`created_at`, `updated_at`,`pipe_id` ) values('.$censor_id.', '.$longitude.' ,'.$latitude.', '.date("Y-m-d H:i:s").', '.date("Y-m-d H:i:s").', '.$pipe_id .'');
+      DB::insert('insert into `sensorsTable` ( `sensor_id`,`longitude`,`latitude`,`created_at`, `updated_at`,`pipe_id` ) values('.$sensor_id.', '.$longitude.' ,'.$latitude.', '.date("Y-m-d H:i:s").', '.date("Y-m-d H:i:s").', '.$pipe_id .'');
          }
 
             echo "Record inserted successfully into sensorsTable";
@@ -83,7 +83,6 @@ class sensorController extends Controller
         }
           
     }
-
    
 
     public function getASpecificSensorsData(Request $request){

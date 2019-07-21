@@ -6,7 +6,7 @@
         <br><br><br><br><br>
         <style>
 
-             .card { background-color: rgba(245, 245, 245, 0.8); }
+             .card { background-color: rgba(245, 245, 245, 1); }
 
           .card-header, .card-footer { opacity: 1}
 
@@ -16,7 +16,7 @@
      <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header"><p class="text-warning">Dashboard</p></div>
 
                    <div class="card-body">
                           @if (session('status'))
