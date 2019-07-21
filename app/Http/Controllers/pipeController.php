@@ -9,14 +9,18 @@ use Illuminate\Support\Facades\Schema;
 class pipeController extends Controller
 {
 
+    public function registerNewPipeGet(Request $request){
+        return view('pipe_register_form');
+    }
 
+    public function updatePipeGet(Request $request){
+        return view('pipe_update_form');
+    }
     public function registerNewPipe(Request $request)
     {
         //fetch values wanted from request header
         $pipe_id = $request->input('pipe_id');
         $sensor_ids = $request->input('pipe_sensors_id');
-
-
 
         $ids = implode(', ', $sensor_ids);
 
@@ -27,8 +31,6 @@ foreach($sensor_ids as $anId){
     echo "checking table fo id".$anId;
     if (!Schema::hasTable($anId)) {
         echo "creating  table fo id".$anId;
-
-
        
         Schema::connection('mysql')->create($anId, function($table)
             {
@@ -38,19 +40,70 @@ foreach($sensor_ids as $anId){
                 $table->timestamps();
                     
             });
+
+            }
+        }
+
+        //insert a row into pipes  table 
+        DB::insert('insert into pipeTable (pipe_id,pipe_sensors_id,created_at, updated_at ) values(?,?,?,?)',[$pipe_id, $ids,  date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
+       
+    }
+
+
+    public function updatePipe(Request $request){
+        
+        //get all sensors 
+        $pipe_id = $request->input('pipe_id');
+        $new_sensor_id = $request->input('sensor_id');
+        
+       
+        $sensors = DB::select('select * from pipeTable where pipe_id = ?', [$pipe_id]);
+       
+
+
+        $all_new_sensors = $sensors[0]->pipe_sensors_id.",".$new_sensor_id;
+
+      
+        
+       DB::update('update pipeTable set pipe_sensors_id = \''.$all_new_sensors.'\' where id = ?', [$sensors[0]->id]);
+
+
+      
+        //get ammouount of dummy data to insert
+        $myArray = explode(',', $all_new_sensors);
+
+        $sensors_instances = DB::table($myArray[0])->count();
+
+        print_r($sensors_instances);
+
+        if (!Schema::hasTable($new_sensor_id)) {
+            echo "creating  table fo id".$new_sensor_id;
+           
+            Schema::connection('mysql')->create($new_sensor_id, function($table)
+                {
+                    $table->increments('id')->index();
+                    $table->string('water_pressure_timestamp');
+                    $table->string('water_pressure');
+                    $table->timestamps();
+                        
+                });
+    
+        }else{
+            echo "Table exists  ";
+        }
     
 
+        for ($x = 1; $x <= $sensors_instances; $x++) {
+            echo "Loop Number: $x <br>";
+
+            //insert a row into pipes  table 
+            DB::insert('insert into `'.$new_sensor_id.'` (water_pressure_timestamp,water_pressure ,created_at, updated_at  ) values(?, ?, ? ,?)',[ 0 ,0, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
+            echo "Record inserted successfully into ".$new_sensor_id;     
+        } 
+
+
+
     }
-}
-
-
-       
-          //insert a row into pipes  table 
-        DB::insert('insert into pipeTable (pipe_id,pipe_sensors_id,created_at, updated_at ) values(?,?,?,?)',[$pipe_id, $ids,  date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
-
-       
-    }
-
 
     //list measure instance for the pip sensors
     public function getMeasureInstanceList(Request $request){
@@ -71,7 +124,6 @@ foreach($sensor_ids as $anId){
            
            $specificSensorData = DB::select('SELECT * FROM `'.$tableNameInt.'`');
             
-
             array_push($arrayOfOneSensorData, $specificSensorData);
             break;
         } 
@@ -98,7 +150,7 @@ foreach($sensor_ids as $anId){
         
 
         foreach ( $myArrayOfSensorIds as $value){ 
-
+            
             $tableNameInt = (int)$value; 
            
            $specificSensorData = DB::select('SELECT * FROM `'.$tableNameInt.'`');

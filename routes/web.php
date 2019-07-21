@@ -26,6 +26,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //pipes urls
 Route::post('/pipe/register', 'pipeController@registerNewPipe')->name('pipe_register');
+Route::get('/pipe/register', 'pipeController@registerNewPipeGet')->name('pipe_register_get');
+Route::post('/pipe/update', 'pipeController@updatePipe')->name('pipe_update');
+Route::get('/pipe/update', 'pipeController@updatePipeGet')->name('pipe_update_get');
 Route::get('/pipe/get_data/{pipe_id}', 'pipeController@getMeasureInstanceList')->name('get_sensors_for_a_pipe');
 Route::get('/pipe/get_data/{pipe_id}/{measure_instance}', 'pipeController@getSensorsForThisPipe')->name('get_measure_instance_data');
 
