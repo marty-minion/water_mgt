@@ -17,7 +17,20 @@ class pipeController extends Controller
 
         $pipeData = DB::select('select * from pipeTable ');
 
-        return view('pipe_update_form')->with("pipeId",$pipeData[0]->pipe_id);
+        
+
+        $pipeIds=array();
+        $number =0;
+
+        foreach($pipeData as $pipeDataItem){
+
+            // print_r($pipeDataItem->pipe_id);
+            array_push($pipeIds, $pipeDataItem->pipe_id);
+         $number++;
+        }
+        // print_r($pipeIds);
+        return view('pipe_update_form')->with("pipeId",$pipeIds);
+        
     }
     public function registerNewPipe(Request $request)
     {

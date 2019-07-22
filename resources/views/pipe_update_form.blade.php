@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Update pipe</div>
+                <div class="card-header">Update pipe  &nbsp; <small>(Add a new sensor)</small></div>
                 <div class="card-body">
                     <form method="POST" action="{{ route('pipe_update') }}">
                         @csrf
@@ -19,8 +19,8 @@
   </a>
 
   <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-  @foreach($pipeId as $pipeId)
-    <a class="dropdown-item" href="#">{{$pipeId}}</a>
+  @foreach($pipeId as $pipeIdData)
+    <a class="dropdown-item" href="#">{{$pipeIdData}}</a>
     @endforeach
   </div>
 
