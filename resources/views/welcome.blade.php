@@ -55,12 +55,6 @@
                 <a class="nav-link page-scroll" href="#pricing">Pricing</a>
               </li>     
               <li class="nav-item">
-                <a class="nav-link page-scroll" href="#team">Team</a>
-              </li> 
-              <li class="nav-item">
-                <a class="nav-link page-scroll" href="#blog">Blog</a>
-              </li>  
-              <li class="nav-item">
                 <a class="nav-link page-scroll" href="#contact">Contact</a>
               </li> 
               @guest
@@ -148,28 +142,6 @@
             </div>
           </div>
           <!-- End Col -->
-          <!-- Start Col -->
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="services-item text-center">
-              <div class="icon">
-                <i class="lni-brush"></i>
-              </div>
-              <h4>Slick Design</h4>
-              <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
-            </div>
-          </div>
-          <!-- End Col -->
-          <!-- Start Col -->
-          <div class="col-lg-4 col-md-6 col-xs-12">
-            <div class="services-item text-center">
-              <div class="icon">
-                <i class="lni-heart"></i>
-              </div>
-              <h4>Crafted with Love</h4>
-              <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
-            </div>
-          </div>
-          <!-- End Col -->
 
         </div>
       </div>
@@ -178,33 +150,7 @@
 
 
 
-    <!-- Business Plan Section Start -->
-    <section id="business-plan">
-      <div class="container">
-
-        <div class="row">
-          <!-- Start Col -->
-          <div class="col-lg-6 col-md-12 pl-0 pt-70 pr-5">
-            <div class="business-item-img">
-              <img src="{{URL::asset('images/index/business/business-img.png')}}" class="img-fluid" alt="">
-            </div>
-          </div>
-          <!-- End Col -->
-          <!-- Start Col -->
-          <div class="col-lg-6 col-md-12 pl-4">
-            <div class="business-item-info">
-              <h3>Crafted For Business, Startup and Agency Websites</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <br> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <br> veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <br> commodo consequat. Duis aute irure dolor in reprehenderit in voluptate <br> velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
-              <a class="btn btn-common" href="#">download</a>
-            </div>
-          </div>
-          <!-- End Col -->
-
-        </div>
-      </div>
-    </section>
-    <!-- Business Plan Section End -->
+   
 
 
 
