@@ -49,7 +49,9 @@ class sensorController extends Controller
             //insert
             // DB::insert('insert into `sensorsTable` ( `sensor_id`,`longitude`,`latitude`,`created_at`, `updated_at`,`pipe_id` ) values(?,?,?,?,?,?)',[$censor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
     
-      DB::insert('insert into `sensorsTable` ( `sensor_id`,`longitude`,`latitude`,`created_at`, `updated_at`,`pipe_id` ) values('.$censor_id.', '.$longitude.' ,'.$latitude.', '.date("Y-m-d H:i:s").', '.date("Y-m-d H:i:s").', '.$pipe_id .'');
+            $today = date("Y-m-d H:i:s");
+
+      DB::insert('insert into `sensorsTable` ( `sensor_id`,`longitude`,`latitude`,`pipe_id` ) values('.$censor_id.', '.$longitude.' ,'.$latitude.','.$pipe_id .'');
          }
 
             echo "Record inserted successfully into sensorsTable";
