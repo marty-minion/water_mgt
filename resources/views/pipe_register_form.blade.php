@@ -40,18 +40,41 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button  type="submit" id="submitBtn" class="btn btn-primary" >
                                submit
                                 </button>
                             </div>
                         </div>
 
-        
+
                         <script>
-                        
 
 
-                        
+var pipe_number=document.getElementById("pipe_number").value;
+var sensors_id=document.getElementById("sensors_id").value;
+
+document.getElementById("submitBtn").addEventListener("click", function(event){
+  event.preventDefault()
+
+  xhr = new XMLHttpRequest();
+var url = "{{ route('pipe_register') }}";
+xhr.open("POST", url, true);
+xhr.setRequestHeader("Content-type", "application/json");
+xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json.email + ", " + json.name)
+    }
+}
+var data = JSON.stringify({"pipe_number": pipe_number ,"name":"["+sensors_id+"]"});
+xhr.send(data);
+
+
+
+
+
+});
+
                         </script>
                     </form>
                 </div>

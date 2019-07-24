@@ -137,12 +137,12 @@
               <div class="icon">
                 <i class="lni-cog"></i>
               </div>
-              <h4>Bootstrap 4</h4>
-              <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
+              <h4>Water Engineering Services</h4>
+              <p>Always ahead of the curve. Always there when you need us</p>
             </div>
           </div>
           <!-- End Col -->
-
+          
         </div>
       </div>
     </section>

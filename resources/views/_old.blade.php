@@ -829,34 +829,63 @@
  
 
         </div>
-<<<<<<< HEAD
-@endsection
-    </body>
-   
-</html>
-<!-- Code from LAYOUT-->
- <!-- <nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="home">Water Engineering Services</a>
-    </div>
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="home">Home</a></li>
-      <li><a href="#services">Services</a></li>
-      <li><a href="#contact">Contact US</a></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-      <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-    </ul>
-  </div>
-</nav> -->
-=======
         <!-- End Row -->
       </div>
     </section>
     <!-- Team section End -->
 
+<!-- Old Section Header -->
+<!-- Start Col -->
+<div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="services-item text-center">
+              <div class="icon">
+                <i class="lni-brush"></i>
+              </div>
+              <h4>Slick Design</h4>
+              <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
+            </div>
+          </div>
+          <!-- End Col -->
+          <!-- Start Col -->
+          <div class="col-lg-4 col-md-6 col-xs-12">
+            <div class="services-item text-center">
+              <div class="icon">
+                <i class="lni-heart"></i>
+              </div>
+              <h4>Crafted with Love</h4>
+              <p>Share processes and data secure lona need to know basis Our team assured your web site is always safe.</p>
+            </div>
+          </div>
+          <!-- End Col -->
 
+          <!-- Another start page div-->
+           <!-- Business Plan Section Start -->
+    <section id="business-plan">
+      <div class="container">
+
+        <div class="row">
+          <!-- Start Col -->
+          <div class="col-lg-6 col-md-12 pl-0 pt-70 pr-5">
+            <div class="business-item-img">
+              <img src="{{URL::asset('images/index/business/business-img.png')}}" class="img-fluid" alt="">
+            </div>
+          </div>
+          <!-- End Col -->
+          <!-- Start Col -->
+          <div class="col-lg-6 col-md-12 pl-4">
+            <div class="business-item-info">
+              <h3>Crafted For Business, Startup and Agency Websites</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do <br> tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim <br> veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea <br> commodo consequat. Duis aute irure dolor in reprehenderit in voluptate <br> velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+              <a class="btn btn-common" href="#">download</a>
+            </div>
+          </div>
+          <!-- End Col -->
+
+        </div>
+      </div>
+    </section>
+    <!-- Business Plan Section End -->
+          
 
     
