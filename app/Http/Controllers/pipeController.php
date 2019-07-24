@@ -26,17 +26,11 @@ class pipeController extends Controller
 
        
 
-//check if sensors table exsit if not create
-foreach($sensor_ids as $anId){
-    echo "checking table fo id".$anId;
-    if (!Schema::hasTable($anId)) {
-<<<<<<< HEAD
-        echo "creating  table for id".$anId;
-
-
-=======
+      //check if sensors table exsit if not create
+      foreach($sensor_ids as $anId){
+      echo "checking table fo id".$anId;
+      if (!Schema::hasTable($anId)) {
         echo "creating  table fo id".$anId;
->>>>>>> 96ef06394bf1714b009d8ec6b9a80d5c8d0e9e05
        
         Schema::connection('mysql')->create($anId, function($table)
             {
@@ -52,7 +46,7 @@ foreach($sensor_ids as $anId){
 
         //insert a row into pipes  table 
         DB::insert('insert into pipeTable (pipe_id,pipe_sensors_id,created_at, updated_at ) values(?,?,?,?)',[$pipe_id, $ids,  date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
-       
+    
     }
 
 

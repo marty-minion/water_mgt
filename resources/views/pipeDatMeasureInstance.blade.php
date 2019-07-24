@@ -6,8 +6,13 @@
 @section('content')
 
 <br><br><br><br><br>
+<style>
 
+.card { background-color: rgba(255, 255, 255, 1); }
 
+.card-header, .card-footer { opacity: 1}
+
+</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -28,7 +33,7 @@
                 <th>
                 water pressure timestamp
                 </th>
-exist                <th>
+                <th>
                 water pressure
                 </th>
                 
