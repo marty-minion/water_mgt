@@ -27,7 +27,6 @@ class sensorController extends Controller
         $sensor_id = $request->input('censor_id');
         $longitude = $request->input('longitude');
         $latitude = $request->input('latitude');
-        $water_pressure_timestamp = $request->input('water_pressure_timestamp');
         $water_pressure = $request->input('water_pressure');
         $pipe_id = $request->input('pipe_id');
 
@@ -57,8 +56,7 @@ class sensorController extends Controller
 
             Schema::connection('mysql')->create($sensor_id, function($table)
             {
-                $table->increments('id')->index();;
-                $table->string('water_pressure_timestamp');
+                $table->increments('id')->index();
                 $table->string('water_pressure');
                 $table->timestamps();
                     
@@ -67,7 +65,7 @@ class sensorController extends Controller
 
 
             //insert into the table
-            DB::insert('insert into `'.$sensor_id.'` (water_pressure_timestamp,water_pressure ,created_at, updated_at  ) values(?, ?, ? ,?)',[ $water_pressure_timestamp ,$water_pressure, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
+            DB::insert('insert into `'.$sensor_id.'` (water_pressure ,created_at, updated_at  ) values(?, ? ,?)',[$water_pressure, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
             echo "Record inserted successfully into ".$sensor_id;
       
         }else{
@@ -78,7 +76,7 @@ class sensorController extends Controller
     
          }
             
-            DB::insert('insert into `'.$sensor_id.'` (water_pressure_timestamp,water_pressure ,created_at, updated_at ) values(?, ?, ? , ?)',[ $water_pressure_timestamp ,$water_pressure, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
+            DB::insert('insert into `'.$sensor_id.'` (water_pressure ,created_at, updated_at ) values(?, ? , ?)',[$water_pressure, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
             echo "Record inserted successfully into ".$sensor_id;
         }
           

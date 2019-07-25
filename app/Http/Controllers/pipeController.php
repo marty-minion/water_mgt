@@ -51,7 +51,6 @@ class pipeController extends Controller
         Schema::connection('mysql')->create($anId, function($table)
             {
                 $table->increments('id')->index();
-                $table->string('water_pressure_timestamp');
                 $table->string('water_pressure');
                 $table->timestamps();
 
@@ -97,7 +96,6 @@ class pipeController extends Controller
             Schema::connection('mysql')->create($new_sensor_id, function($table)
                 {
                     $table->increments('id')->index();
-                    $table->string('water_pressure_timestamp');
                     $table->string('water_pressure');
                     $table->timestamps();
 
@@ -112,7 +110,7 @@ class pipeController extends Controller
             echo "Loop Number: $x <br>";
 
             //insert a row into pipes  table
-            DB::insert('insert into `'.$new_sensor_id.'` (water_pressure_timestamp,water_pressure ,created_at, updated_at  ) values(?, ?, ? ,?)',[ 0 ,0, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
+            DB::insert('insert into `'.$new_sensor_id.'` (water_pressure ,created_at, updated_at  ) values(?, ? ,?)',[ 0, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
             echo "Record inserted successfully into ".$new_sensor_id;
         }
 

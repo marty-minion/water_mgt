@@ -16,7 +16,7 @@
                 @foreach($sensorData as $sensorData)
                
                  <h4>  
-                 water_pressure_timestamp  :  {{$sensorData->water_pressure_timestamp}} 
+                 water_pressure_timestamp  :  {{$sensorData->created_at}} 
                  water_pressure  :  {{$sensorData->water_pressure}} 
                  
                  </h4>
