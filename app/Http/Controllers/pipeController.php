@@ -44,9 +44,9 @@ class pipeController extends Controller
 
       //check if sensors table exsit if not create
       foreach($sensor_ids as $anId){
-      echo "checking table fo id".$anId;
+      echo "\n checking table fo id".$anId;
       if (!Schema::hasTable($anId)) {
-        echo "creating  table fo id".$anId;
+        echo "\n creating  table fo id".$anId;
 
         Schema::connection('mysql')->create($anId, function($table)
             {
@@ -88,10 +88,10 @@ class pipeController extends Controller
 
         $sensors_instances = DB::table($myArray[0])->count();
 
-        print_r($sensors_instances);
+        print_r("\n ".$sensors_instances);
 
         if (!Schema::hasTable($new_sensor_id)) {
-            echo "creating  table fo id".$new_sensor_id;
+            echo "\n creating  table fo id".$new_sensor_id;
 
             Schema::connection('mysql')->create($new_sensor_id, function($table)
                 {
@@ -102,16 +102,16 @@ class pipeController extends Controller
                 });
 
         }else{
-            echo "Table exists  ";
+            echo "\n Table exists  ";
         }
 
 
         for ($x = 1; $x <= $sensors_instances; $x++) {
-            echo "Loop Number: $x <br>";
+            echo "\n Loop Number: $x <br>";
 
             //insert a row into pipes  table
             DB::insert('insert into `'.$new_sensor_id.'` (water_pressure ,created_at, updated_at  ) values(?, ? ,?)',[ 0, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
-            echo "Record inserted successfully into ".$new_sensor_id;
+            echo "\n Record inserted successfully into ".$new_sensor_id;
         }
 
 

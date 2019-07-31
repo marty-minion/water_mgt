@@ -51,7 +51,7 @@ class sensorController extends Controller
       DB::insert('insert into `sensorsTable` ( `sensor_id`,`longitude`,`latitude`,`created_at`, `updated_at`,`pipe_id` ) values('.$sensor_id.', '.$longitude.' ,'.$latitude.', '.date("Y-m-d H:i:s").', '.date("Y-m-d H:i:s").', '.$pipe_id .'');
          }
 
-            echo "Record inserted successfully into sensorsTable";
+            echo "\n Record inserted successfully into sensorsTable";
 
 
             Schema::connection('mysql')->create($sensor_id, function($table)
@@ -61,12 +61,12 @@ class sensorController extends Controller
                 $table->timestamps();
                     
             });
-            echo "table created";
+            echo "\n table created";
 
 
             //insert into the table
             DB::insert('insert into `'.$sensor_id.'` (water_pressure ,created_at, updated_at  ) values(?, ? ,?)',[$water_pressure, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
-            echo "Record inserted successfully into ".$sensor_id;
+            echo "\n Record inserted successfully into ".$sensor_id;
       
         }else{
             //insert into the table
@@ -75,9 +75,11 @@ class sensorController extends Controller
             DB::insert('insert into sensorsTable (sensor_id,longitude,latitude,created_at, updated_at,pipe_id ) values(?,?,?,?,?,?)',[$sensor_id, $longitude ,$latitude, date("Y-m-d H:i:s"), date("Y-m-d H:i:s"), $pipe_id]);
     
          }
-            
-            DB::insert('insert into `'.$sensor_id.'` (water_pressure ,created_at, updated_at ) values(?, ? , ?)',[$water_pressure, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
-            echo "Record inserted successfully into ".$sensor_id;
+            // database will throw an error if water_pressure_timestamp is empty 
+            // hence insert current unix time stamp
+            $default_water_pressure_timestamp = time();
+            DB::insert('insert into `'.$sensor_id.'` (water_pressure_timestamp , water_pressure ,created_at, updated_at ) values(?, ?, ? , ?)',[$default_water_pressure_timestamp, $water_pressure, date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
+            echo " \n Record inserted successfully into ".$sensor_id;
         }
           
     }

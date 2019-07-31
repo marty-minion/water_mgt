@@ -1,18 +1,9 @@
 
 
-@extends('layout')
+@extends('layouts.app')
 
 
 @section('content')
-
-<br><br><br><br><br>
-<style>
-
-.card { background-color: rgba(255, 255, 255, 1); }
-
-.card-header, .card-footer { opacity: 1}
-
-</style>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-12">
@@ -53,24 +44,20 @@
                        <tr>
                         <td>Sensor</td>
                        <td scope="col">  {{ $data }}  </td> 
-                       <td scope="col">  {{$allSensorData[ $data -1 ][0]->created_at }}  </td> 
-                       <td scope="col">  {{$allSensorData[ $data -1 ][0]->water_pressure }}  </td> 
-                      
-                       
-
-                       
-                        @if( $data-1  > 0)
-                            @php $diff =  $allSensorData[ $data -1 ][0]->water_pressure - $allSensorData[ $data -2 ][0]->water_pressure   @endphp
+                       <td scope="col">  {{$allSensorData[ $data -1 ][$measureInstance]->created_at }}  </td> 
+                       <td scope="col">  {{$allSensorData[ $data -1 ][$measureInstance]->water_pressure }}  </td> 
+                                             
+                        @if( $data-1  > $measureInstance)
+                            @php $diff =  $allSensorData[ $data -1 ][$measureInstance]->water_pressure - $allSensorData[ $data -2 ][$measureInstance]->water_pressure   @endphp
                             <td> {{$diff}} </td>
                          @else 
                             <td>{{$data-1 > 1}}</td>
                          @endif 
 
-
-                         @if( $data-1  > 0)
+                         @if( $data-1  > $measureInstance)
                          @php 
-                            $date_one_string = $allSensorData[ $data -1 ][0]->created_at; 
-                            $date_two_string = $allSensorData[ $data -2 ][0]->created_at; 
+                            $date_one_string = $allSensorData[ $data -1 ][$measureInstance]->created_at; 
+                            $date_two_string = $allSensorData[ $data -2 ][$measureInstance]->created_at; 
 
                           
                             $date_one =  new DateTime($date_one_string);

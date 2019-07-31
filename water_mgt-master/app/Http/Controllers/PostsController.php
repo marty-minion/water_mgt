@@ -63,7 +63,7 @@ class PostsController extends Controller
             //insert a row into sensorsrs table
             DB::insert('insert into sensorsTable (sensor_id,longitude,latitude ) values(?, ?,?)',[$censor_id, $longitude ,$latitude]);
 
-            echo "Record inserted successfully into sensorsTable";
+            echo "\n Record inserted successfully into sensorsTable";
 
 
             //create a table for that sensor
@@ -77,24 +77,19 @@ class PostsController extends Controller
             ';
 
             DB::raw($tableQuery);
-            echo "table created";
+            echo "\n table created";
 
 
             //insert into the table
             DB::insert('insert into `'.$censor_id.'` (water_pressure_timestamp,water_pressure ) values(?, ?)',[ $water_pressure_timestamp ,$water_pressure]);
-            echo "Record inserted successfully into ".$censor_id;
+            echo "\n Record inserted successfully into ".$censor_id;
       
         }else{
             //insert into the table
            
             DB::insert('insert into `'.$censor_id.'` (water_pressure_timestamp,water_pressure ) values(?, ?)',[ $water_pressure_timestamp ,$water_pressure]);
-            echo "Record inserted successfully into ".$censor_id;
-        }
-      
-       
-
-      
-    
+            echo "\n Record inserted successfully into ".$censor_id;
+        }  
     
     }
 
