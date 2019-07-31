@@ -13,18 +13,25 @@
                         <div class="form-group row">
                             <label for="pipe_id" class="col-md-4 col-form-label text-md-right">Pipe id</label>
 
-                            <div class="dropdown show">
-  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    select pipe
-  </a>
+                            <!-- <div class="dropdown show">
+                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    select pipe
+                                </a>
 
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-  @foreach($pipeId as $pipeIdData)
-    <a class="dropdown-item" href="#">{{$pipeIdData}}</a>
-    @endforeach
-  </div>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                @foreach($pipeId as $pipeIdData)
+                                    <a class="dropdown-item" href="#">{{$pipeIdData}}</a>
+                                    @endforeach
+                                </div>
 
-</div>
+                            </div> -->
+                            <div class="col-md-6">
+                            <select name="pipe_id" class="form-control" id="sel1">
+                                @foreach($pipeId as $pipeIdData)
+                                    <option>{{$pipeIdData}}</option>
+                                 @endforeach
+                            </select>
+                            </div>
                         </div>
 
                         <div class="form-group row">
